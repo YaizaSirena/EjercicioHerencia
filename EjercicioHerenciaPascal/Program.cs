@@ -10,6 +10,13 @@ namespace EjercicioHerenciaPascal
     {
         static void Main(string[] args)
         {
+            Electrodomestico elec1 = new Electrodomestico();
+
+
+            Console.WriteLine(elec1.Color);
+            Console.ReadLine();
+
+
         }
     }
 }

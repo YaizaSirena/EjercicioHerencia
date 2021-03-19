@@ -12,10 +12,10 @@ namespace EjercicioHerenciaPascal
         //Atributos :
         double precioBase;
         public enum enumColor { BLANCO, NEGRO, ROJO, AZUL, GRIS, blanco, negro, rojo, azul, gris };
-        public enumColor color;
+        //public enumColor color;
         public enum enumConsumo { A, B, C, D, E, F }
-        public enumConsumo consumo;
-        public double peso;
+        //public enumConsumo consumo;
+        //public double peso;
 
         //Geter seter
         public double PrecioBase { get; set; }
@@ -40,12 +40,12 @@ namespace EjercicioHerenciaPascal
             Peso = pesoBasePa;
         }
 
-        public Electrodomestico(double precioBasePa, string colorPa, string consumoPa, double pesoBasePa)
+        public Electrodomestico(double precioBasePa, string colorPa, string consumoPa, double pesoPa)
         {
             PrecioBase = precioBasePa;
             comprobarColor(colorPa);
             comprobarConsumoEnergético(consumoPa);
-            Peso = pesoBasePa;
+            Peso = pesoPa;
         }
 
         private void comprobarConsumoEnergético (string consumoPa)
@@ -71,9 +71,9 @@ namespace EjercicioHerenciaPascal
             }
         }
 
-        public void precioFinal()
+        public virtual void precioFinal()
         {
-            switch(consumo)
+            switch(Consumo)
             {
                 case enumConsumo.A:
                     precioBase += 100;
