@@ -26,12 +26,14 @@ namespace EjercicioHerenciaPascal
             Carga = cargaPa;
         }
 
-        public override void precioFinal()
+        public override double precioFinal()
         {
-            if(Carga > 30)
+            if (Carga > 30)
             {
                 PrecioBase += 50;
+                return PrecioBase;
             }
+            else return PrecioBase;
         }
         
     }

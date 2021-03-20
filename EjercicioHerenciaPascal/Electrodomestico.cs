@@ -10,7 +10,7 @@ namespace EjercicioHerenciaPascal
     {
 
         //Atributos :
-        double precioBase;
+        
         public enum enumColor { BLANCO, NEGRO, ROJO, AZUL, GRIS, blanco, negro, rojo, azul, gris };
         //public enumColor color;
         public enum enumConsumo { A, B, C, D, E, F }
@@ -71,45 +71,49 @@ namespace EjercicioHerenciaPascal
             }
         }
 
-        public virtual void precioFinal()
+        public virtual double precioFinal()
         {
             switch(Consumo)
             {
                 case enumConsumo.A:
-                    precioBase += 100;
+                    PrecioBase += 100;
                     break;
                 case enumConsumo.B:
-                    precioBase += 80;
+                    PrecioBase += 80;
                     break;
                 case enumConsumo.C:
-                    precioBase += 60;
+                    PrecioBase += 60;
                     break;
                 case enumConsumo.D:
-                    precioBase += 50;
+                    PrecioBase += 50;
                     break;
                 case enumConsumo.E:
-                    precioBase += 30;
+                    PrecioBase += 30;
                     break;
                 case enumConsumo.F:
-                    precioBase += 10;
+                    PrecioBase += 10;
                     break;
-            }
+            } return PrecioBase;
+
+
+
             if (Peso > 0 || Peso <= 19)
             {
-                precioBase += 10;
+                PrecioBase += 10;
             }
             else if (Peso >=20  || Peso <= 49)
             {
-                precioBase += 50;
+                PrecioBase += 50;
             }
             else if (Peso >= 50 || Peso <= 79)
             {
-                precioBase += 80;
+                PrecioBase += 80;
             }
             else if (Peso >80)
             {
-                precioBase += 100;
+                PrecioBase += 100;
             }
+            return PrecioBase;
         }
 
     }
