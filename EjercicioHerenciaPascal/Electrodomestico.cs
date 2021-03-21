@@ -8,22 +8,14 @@ namespace EjercicioHerenciaPascal
 {
     class Electrodomestico
     {
-
-        //Atributos :
-        
         public enum enumColor { BLANCO, NEGRO, ROJO, AZUL, GRIS, blanco, negro, rojo, azul, gris };
-        //public enumColor color;
         public enum enumConsumo { A, B, C, D, E, F }
-        //public enumConsumo consumo;
-        //public double peso;
-
-        //Geter seter
+        
         public double PrecioBase { get; set; }
         public enumColor Color { get; set; }
         public enumConsumo Consumo { get; set; }
         public double Peso { get; set; }
 
-        //Constructores:
         public Electrodomestico ()
         {
             PrecioBase = 100;
@@ -44,11 +36,11 @@ namespace EjercicioHerenciaPascal
         {
             PrecioBase = precioBasePa;
             comprobarColor(colorPa);
-            comprobarConsumoEnergético(consumoPa);
+            comprobarConsumoEnergetico(consumoPa);
             Peso = pesoPa;
         }
 
-        private void comprobarConsumoEnergético (string consumoPa)
+        private void comprobarConsumoEnergetico (string consumoPa)
         {
             if (Enum.IsDefined(typeof(enumConsumo), consumoPa))
             {
@@ -59,6 +51,7 @@ namespace EjercicioHerenciaPascal
                 Consumo = enumConsumo.F;
             }
         }
+
         private void comprobarColor(string colorPa)
         {
             if (Enum.IsDefined(typeof(enumColor), colorPa))
@@ -71,7 +64,7 @@ namespace EjercicioHerenciaPascal
             }
         }
 
-        public virtual double precioFinal()
+        public virtual void precioFinal()       //Método que aumenta el precio según consumo y peso del electrodomestico
         {
             switch(Consumo)
             {
@@ -93,9 +86,7 @@ namespace EjercicioHerenciaPascal
                 case enumConsumo.F:
                     PrecioBase += 10;
                     break;
-            } return PrecioBase;
-
-
+            } 
 
             if (Peso > 0 || Peso <= 19)
             {
@@ -113,7 +104,6 @@ namespace EjercicioHerenciaPascal
             {
                 PrecioBase += 100;
             }
-            return PrecioBase;
         }
 
     }

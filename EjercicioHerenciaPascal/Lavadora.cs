@@ -8,33 +8,30 @@ namespace EjercicioHerenciaPascal
 {
     class Lavadora : Electrodomestico
     {
-        
-        
         public int Carga { get; set; }
 
         public Lavadora() : base()
         {
             Carga = 5;
         }
+
         public Lavadora(int precioPa , int pesoPa) : base(precioPa, pesoPa)
         {
             Carga = 5;
         }
+
         public Lavadora(int cargaPa, int precioPa, int pesoPa, string consumoPa, string colorPa )
             : base(precioPa, colorPa, consumoPa, pesoPa)
         {
             Carga = cargaPa;
         }
 
-        public override double precioFinal()
+        public override void  precioFinal()   //Método sobreescrito que cambia precio según carga.
         {
             if (Carga > 30)
             {
                 PrecioBase += 50;
-                return PrecioBase;
             }
-            else return PrecioBase;
         }
-        
     }
 }

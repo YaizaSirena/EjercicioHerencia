@@ -22,6 +22,7 @@ namespace EjercicioHerenciaPascal
             Resolucion = 20;
             TDT = false;
         }
+
         public Television(double resolucionPa, bool TDTPa, int precioPa, int pesoPa, string consumoPa, string colorPa)
           : base(precioPa, colorPa, consumoPa, pesoPa)
         {
@@ -29,19 +30,16 @@ namespace EjercicioHerenciaPascal
             TDT = TDTPa;
         }
 
-        public override double precioFinal() 
+        public override void precioFinal()          //Método sobreescrito que aumenta el precio en fubncion de resolución y TDT
         {
             if( Resolucion > 40)
             {
                 PrecioBase *= 1.3;
-                return PrecioBase;
             }
             if( TDT)
             {
                 PrecioBase += 50;
-                return PrecioBase;
             }
-            return PrecioBase;
         }
     }
 }
